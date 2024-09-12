@@ -1,0 +1,19 @@
+# Ignore all .class files
+*.class
+
+# Ignore other common Java-related build artifacts
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# Ignore temporary files created by the IDE or OS
+*.swp
+*.swo
+*.DS_Store
+.idea/
+*.iml
+.classpath
+.project
