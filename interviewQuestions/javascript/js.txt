@@ -89,3 +89,102 @@ The Symbol data type is a unique(Even if two symbols are created with the same d
 const sym1 = Symbol('description');
 const sym2 = Symbol('description');
 console.log(sym1 === sym2); // Output: false
+
+Memory in JS
+JS uses two types of memory: 
+1) stack memory --> for primitive dataType
+2) heap memory --> for non-primitive dataType
+
+In stack memory, we can access a copy of the memory/variable but in heap memory we can access the real memory/variable.
+For eg,
+  const name = "Ankur"
+  const anotherName = name;
+  anotherName = "Aaryan"
+  on console.log(name,anotherName) we will get two different outputs but
+
+  const Obj ={
+    name:"Ankur"
+  }
+  const myObj= Obj;
+  myObj.name="Aaryan"
+  now on console.log(Obj.name,myObj.name), we will get output as Aaryan, because both of these variable are referencing to a single memory location.
+
+Arrays
+--> it is a collection of multiple items under a single variable
+--> it is resizeable
+--> it can contain elements of multiple dataType
+--> on performing copy operation on an array, it creates a shallow copy of the array
+
+**Shallow Copy and Deep Copy**
+A shallow copy creates a new array, but it does not create new copies of the elements within the array. Instead, it points to the same elements as the original array. A deep copy, on the other hand, creates a completely independent copy of both the array and its data. It does not share any data with the original array
+
+Array Methods
+Here are one-line explanations for the listed array methods:
+
+1. push: Adds elements to the end of an array
+2. pop: Removes the last element of an array 
+3. unshift: Adds elements to the beginning of an array 
+4. shift: Removes the first element of an array 
+5. includes: Checks if an array contains a specified element
+6. indexOf: Returns the first index at which a given element is found
+7. join: Joins all elements of an array into a string, separated by a specified separator.
+8. slice: Returns a shallow copy of a portion of an array, without modifying the original array.
+9. splice: Adds/removes elements at a specific index, modifying the original array.
+10. concat: Merges two or more arrays into a new array without modifying the originals.
+11. spread (...xyz): spreads both the arrays and stores it element by element
+12. flat(infinity): Flattens nested arrays into a single-level array, up to the specified depth (infinity flattens all levels). more effective than spread
+13. Array.isArray: Checks if a value is an array 
+14. Array.from: Creates a new array from an iterable or array-like object.
+15. Array.of: Creates a new array with the specified elements.
+
+Object
+a collection of key-value pairs, used to represent real-world entities or structures, which allows to group related data and functionality together. 
+
+
+init: i) by Constructor(singleton)
+      ii) by literals (const obj ={})
+access: 
+      i) by dot operator(.)
+      ii) by [ ]
+the dot operator doesn't always work. for eg; if a key has space in between. ie, full name
+we cannot access it using dot-operator but we can access it like ["full name"]
+
+In case of Symbol, if we use dot operator, the dataType of variable get changed. 
+for eg; 
+const mySym = Symbol("key1");
+const JsUser = { mySym: "myKey1" }; //(mySym is treated as a string key)
+console.log(JsUser.mySym);  // Output: "myKey1" (accessing the "mySym" key as a string)
+
+const JsUser1 = { [mySym]: "myKey1" };  // Now mySym is a Symbol key
+console.log(JsUser1[mySym]);  // Output: "myKey1" // Accessing with the symbol as a key
+console.log(JsUser1.mySym) // we can't access it as String
+
+Object Methods
+i) freeze --> Once an object is frozen, its properties cannot be modified
+ii) assign --> returns a concatenated object
+    use: const obj4=Object.assign({}, obj1, obj2, obj3)
+    {}--> target
+    obj1, obj2, obj3 --> source
+    *if we don't use {}, obj1 will become target object
+ii) spread --> expands an object into individual elements/properties.
+    use: const obj3 = {...obj1,...obj2}
+iii) entries --> returns the key-value pair in form of array elements
+iv) hasOwnProperty --> checks whether an object has a property as its own (not inherited) property.
+    use:  const obj = { a: 1 };
+          console.log(obj.hasOwnProperty('a'));  // Output: true
+          console.log(obj.hasOwnProperty('toString'));  // Output: false
+
+Functions 
+A block of code designed to perform a specific task or set of tasks. THese are reusable, we can define a function once and execute (or "call") it as many times as needed. They help organize code into logical, manageable pieces.
+
+definition: function myName(){}
+calling:  i)  reference: myName ==> passing the function as an argument
+          ii) execution: myName() ==> running the function
+
+function myName(name){ //name == parameter
+  return `${name}` 
+}
+console.log(myName("Ankur")) // "Ankur" == argument
+
+what if no argument is passed by a function?
+we will get undefined as a return value because it is the default parameter
