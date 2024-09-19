@@ -44,8 +44,8 @@ The main primitive dataTypes in JavaScript are:
 Number	    -->	Represents numeric values
 String	    -->	Represents text
 Boolean	    -->	Represents logical true or false
-Undefined	-->	Uninitialized variable
-Null	    -->	Explicitly represents "no value"
+Undefined	  -->	Uninitialized variable
+Null	      -->	Explicitly represents "no value"
 Symbol	    -->	Represents a unique identifier (ES6)
 BigInt	    -->	Represents large integers (ES2020)
 
@@ -188,3 +188,127 @@ console.log(myName("Ankur")) // "Ankur" == argument
 
 what if no argument is passed by a function?
 we will get undefined as a return value because it is the default parameter
+
+what if we dont know number of argument to get passed? (shopping cart problem)
+if we don't know the number of arguments to pass, we can handle this with the rest operator (...args).This allows the function to accept an arbitrary number of arguments
+
+TypeChecking --> JavaScript is a dynamically typed language. It allows to declare variables without defining the variable type. For eg, a variable can be declared and assigned a number. But as we write more code, values might get misplaced, and we might assign the same variable a string or boolean. This would affect your code when it runs.
+example:
+function add(x, y) {
+    return x + y;
+}
+console.log(add(1, 2));   // Output: 3
+console.log(add(1, "2")); // Output: "12" (string concatenation, no error)
+
+scope of a  variable
+global -->  var
+block --> let, const
+
+let a = 10
+
+if(true){
+    let a=20
+    console.log(a)
+}
+console.log(a)// this code prints 20 and 10 but
+
+let a = 10
+
+if(true){
+    a=20
+    console.log(a)
+}
+console.log(a) //this code prints 20 and 20
+
+Expressions --> A function expression is a way to define a function in JavaScript by assigning it to a variable or a constant. for eg, 
+const addTwo = function(num){
+	return num+2;
+}
+
+we can access a function before its declaration but we cannot access an expression before declaration
+
+console.log(addOne(5)) // this will not give any error 
+function addOne(num){
+	return num+1
+}
+
+console.log(addTwo(5)) //this gives an error 
+const addTwo = function(num){
+	return num+2;
+}
+
+this happens because of a concept called hoisting
+hoisting in JavaScript is a behavior in which variable and function declarations are moved to the top of their containing scope (global or function scope) during the compilation phase of code execution. This means that we can reference variables and functions before they are actually declared in the code.
+However, only the declarations are hoisted, not the initializations (or assignments). This leads to the error we see in above code.
+
+this keyword --> The this keyword in refers to the context in which it is executed. this keyword works on current context not on current scope
+
+when we do console.log(this) inside a function we get the global object 
+
+when we do console.log(this) in a node environment we get an empty object but when we do the same on browser we get a window object in return because window is the default global object for browser
+
+arrow function --> introduced in ECMAScript 6 (ES6), provide a shorter syntax for writing functions. It also have some unique features compared to traditional function expressions
+declaration : 
+const abc = ()=> {
+console.log("hi")
+}
+
+when we do abc(), in case of arrow function also we get an empty object,  
+it also handle the this keyword differently compared to traditional function expressions.
+
+implicit return:
+const addTwo(num1, num2)=> (num1+num2) // we can't use curly braces here because that will make it a explicit function and we will have to write return statement here
+const addTwo(num1, num2)=> num1+num2
+these both are also arrow functions but we dont have to write return statement here
+Implicit return in arrow functions is only possible when the function body consists of a single expression
+
+immediately invoked function expression(IIFE) : to prevent pollution due to global scope
+we have to use parenthesis to stop the execution of this function
+
+execution context and call stack
+
+comparision operators:  <,>,==,<=,>=,!=, ===,!==
+
+logical operators: &&(all should be true), ||(one should be true),
+
+Nullish Coalescing operator (??): null and undefined
+example
+null??10
+undefined??12
+
+terniary operator (?) : condition ? true : false
+example
+const age =10
+age>=12:console.log("age is greater than 12"):console.log("age is less than 10")
+
+truthy and flasy value
+falsy values : false,0, -0,BigInt On, "", null, undefined, NaN
+truthy values: "0", "false", " ", [], {}, function(){},
+
+Map
+difference bewteen Map and Object
+--> map contains only unique values, it remembers the order of its elemtns
+--> maps are uniterable
+--> we can use for of loop on Maps but not on objects
+
+callback fnctions --> dont have a name
+
+forEach --> it doesn;t return values
+filter --> returns the value
+map --> also returns the value, supports chaining
+
+reduce --> it needs an initial value and after that it is replaced by whatever we have recieved in accumulator
+
+DOM --> The DOM is a critical concept, providing a structured representation of a web document and a way to interact with and manipulate it programmatically. By understanding and using the DOM, we can create dynamic and interactive web pages.
+DOM selectors
+1) getElementById()
+2) getElementByClassName()
+3) querySelector()
+4) querySelectorAll()
+
+textContent --> return full text content inside an element, doesn't care about its css property
+innerHTML --> return full html content inside an element
+innerText --> return only the visible text content inside an element
+NodeList(forEach enabled) vs Array(loop enabled) vs HTMLCollection(no looping)
+
+convert HTMLCollection/NodeList to Array --> Arrar.from()
