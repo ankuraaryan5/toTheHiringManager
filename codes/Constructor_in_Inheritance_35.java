@@ -33,7 +33,7 @@ class Deriving extends Derived{
         System.out.println("z is equal to: "+z);
     }
 }
-public class Constructor_in_Inheritance {
+public class Constructor_in_Inheritance_35 {
     public static void main(String[] args) {
         // Base base = new Base(5,3);
         // Derived d = new Derived();

@@ -1,0 +1,122 @@
+Method overriding in Java occurs when a subclass (child class) provides a specific implementation of a method that is already defined in its superclass (parent class). There are several conditions and rules for method overriding:
+
+1. Inheritance is Required
+   - The method must be inherited from the superclass. Method overriding can only occur between a superclass and a subclass. The subclass inherits the method from the parent class and then redefines it.
+
+2. Same Method Signature
+   - The method in the subclass must have the same name, return type, and parameter list as the method in the superclass. This is called having the same method signature.
+
+     class Parent {
+         void show() { 
+             System.out.println("Parent method");
+         }
+     }
+     
+     class Child extends Parent {
+         @Override
+         void show() {  // Same name, return type, and parameter list
+             System.out.println("Child method");
+         }
+     }
+
+3. Access Modifier Must Be the Same or More Accessible
+   - The access modifier of the overriding method (in the subclass) cannot be more restrictive than the method in the superclass. For example:
+     - If the superclass method is `protected`, the overriding method can be `protected` or `public` (but not `private`).
+     - If the superclass method is `public`, the overriding method must also be `public`.
+
+4. Return Type
+   - The return type of the overriding method must be the same or a covariant type (a subtype of the return type in the superclass). This means if the superclass method returns `ParentClass`, the subclass method can return `ChildClass` (which is a subclass of `ParentClass`).
+
+     
+     class Parent {
+         Parent returnSomething() {
+             return new Parent();
+         }
+     }
+
+     class Child extends Parent {
+         @Override
+         Child returnSomething() {  // Covariant return type
+             return new Child();
+         }
+     }
+     
+
+5. Cannot Override Final Methods
+   - If a method is marked as `final` in the superclass, it cannot be overridden in the subclass. The `final` keyword prevents overriding.
+
+     class Parent {
+         final void show() { 
+             System.out.println("Final method, cannot be overridden");
+         }
+     }
+
+     class Child extends Parent {
+         // Cannot override the final method
+         // void show() {}  // This would cause a compilation error
+     }
+     
+6. Cannot Override Static Methods
+   - Static methods are associated with the class itself rather than any object, so they cannot be overridden (but can be hidden). If you define a static method in a subclass with the same signature as the one in the superclass, it will hide the superclass method, not override it.
+
+     class Parent {
+         static void show() {
+             System.out.println("Parent static method");
+         }
+     }
+
+     class Child extends Parent {
+         static void show() {  // Method hiding, not overriding
+             System.out.println("Child static method");
+         }
+     }
+
+7. Cannot Override Private Methods
+   - Private methods in a superclass are not visible to subclasses, so they cannot be overridden. However, you can define a method with the same name and signature in the subclass, but it is not overriding—it’s just a new method specific to that subclass.
+
+     class Parent {
+         private void show() {
+             System.out.println("Private method in Parent");
+         }
+     }
+
+     class Child extends Parent {
+         // This is a new method, not overriding
+         void show() { 
+             System.out.println("Method in Child");
+         }
+     }
+
+8. Use of `@Override` Annotation (Optional but Recommended)
+   - The `@Override` annotation is not required but is recommended because it helps the compiler verify that you are actually overriding a method. If there’s a mistake in the method signature, the compiler will give an error.
+     @Override
+     void show() {
+         System.out.println("Overridden method");
+     }
+
+9. Exception Handling
+   - The overriding method can throw the same exceptions or subclasses of the exceptions thrown by the overridden method. It cannot throw broader or new exceptions that the parent method does not declare (checked exceptions).
+
+     class Parent {
+         void show() throws IOException {  // Parent method throws IOException
+             // ...
+         }
+     }
+
+     class Child extends Parent {
+         @Override
+         void show() throws FileNotFoundException {  // Valid: FileNotFoundException is a subclass of IOException
+             // ...
+         }
+     }
+
+Summary of Key Conditions:
+- The method must have the same name, return type, and parameter list as the superclass.
+- The access level must be the same or more accessible.
+- The return type must be the same or covariant.
+- Cannot override `final`, `static`, or `private` methods.
+- Exception types must follow the inheritance hierarchy.
+
+These rules ensure that overriding allows polymorphism while preserving type safety and expected behavior across different classes.
+
+//THANK YOU OPENAI
