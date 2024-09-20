@@ -1,0 +1,269 @@
+What is React.JS?
+React.JS or React is a front-end and open-source JavaScript library created by Facebook, useful in developing user interfaces for single page applications. It follows the component-based approach and is helpful in building complex and reusable user interface(UI) components.
+
+About React
+Current version of React.JS is V18.0.0 (April 2022).
+Initial Release to the Public (V0.3.0) was in July 2013.
+React.JS was first used in 2011 for Facebook's Newsfeed feature.
+Facebook Software Engineer, Jordan Walke, created it.
+Current version of create-react-app is v5.0.1 (April 2022).
+create-react-app includes built tools such as webpack, Babel, and ESLint.
+
+
+CREATE_REACT_APP
+*if you have installed node.js
+--> open terminal --> npx create-react-app my-react-app --> cd my-react-app --> npm start
+A new browser window will pop up with a newly created React App! If not, open browser and type localhost:3000 in the address bar.
+
+How does React Work?
+React creates a VIRTUAL DOM in memory.
+Instead of manipulating the Real DOM directly, React creates a virtual DOM, where it does all the necessary manipulation, before making the changes in the Real DOM.
+React only changes what needs to be changed!
+React differentiates between both DOMs and finds out what changes have been made, and changes only what needs to be changed. This makes the UI changes more faster and app more efficient
+
+What is JSX?
+JSX stands for JavaScript XML.
+It allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+It converts HTML tags into react elements.
+Example: 
+const myElement = <h1>I Love JSX!</h1>;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
+JSX is an extension of the JavaScript language based on ES6, and is translated into regular JavaScript at runtime.
+
+Expressions in JSX
+With JSX you can write expressions inside curly braces { }.
+The expression can be a React variable, or property, or any other valid JavaScript expression. JSX will execute the expression and return the result
+Example:
+const myElement = <h1>React is {5 + 5} times better with JSX</h1>; // on running this we will get "React is 10 times better with JSX" as output
+
+Inserting a Large Block of HTML
+To write HTML on multiple lines, put the HTML inside parentheses
+Example:
+const myElement = (
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Cherries</li>
+  </ul>
+);
+The HTML code must be wrapped in ONE top level element. Like these "li" tags are wrapped inside a ul tag.
+We can also use Fragments(<></>) to wrap these tags
+
+class = className
+The class attribute is a much used attribute in HTML, but since JSX is rendered as JavaScript, and the class keyword is a reserved word in JavaScript, we are not allowed to use it in JSX.
+JSX solved this by using className instead. When JSX is rendered, it translates className attributes into class attributes.
+Example:
+const myElement = <h1 className="myclass">Hello World</h1>;
+
+React Components
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and returns HTML.
+Components are of two types, Class components and Function components. However it is now suggested to use Function components along with Hooks, which were added in React 16.8.
+
+How to create a Component?
+--> To create a React component, the component's name MUST start with an upper case letter.
+
+Function Components
+A functional component is a block of code which uses functions, instead of class, to return HTML and can be written using much less code, and are easier to understand.
+Example:
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+
+Rendering a Component
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+
+How to create a component?
+We can create a new component file with a filename + .js extension and put the code inside it. (filename must start with an upperCase letter)
+
+React Props
+Props are arguments passed into React components.
+Props are passed to components via HTML attributes.
+props stands for properties.
+
+How to send props from one component to other?
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand="Ford" />
+    </>
+  );
+}
+
+How to recieve a prop?
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+We can send anything from one file to the other it may be variable, object etc
+Example:
+function Garage() {
+  const carName = "Ford";
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={ carName } />
+    </>
+  );
+}
+
+function Garage() {
+const carInfo = { name: "Ford", model: "Mustang" };
+  
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={ carInfo.model } />
+    </>
+  );
+}
+React Props are read-only! It will generate an error if we try to change their value.
+
+React Events
+Just like HTML DOM events, React can also perform actions based on user events.
+React has the same events as HTML: click, change, mouseover etc.
+
+Adding Events
+React events are written in camelCase syntax(onClick instead of onclick).
+React event handlers are written inside curly braces(onClick={shoot} instead of onclick="shoot()")
+Example:
+function Football() {
+  const shoot = () => {
+    alert("Great Shot!");
+  }
+  return (
+    <button onClick={shoot}>Take the shot!</button>
+  );
+}
+
+To pass an argument to an event handler, we use an arrow function.
+Example:
+function Football() {
+  const shoot = (a) => {
+    alert(a);
+  }
+  return (
+    <button onClick={() => shoot("Goal!")}>Take the shot!</button>
+  );
+}
+
+React Event Object
+Event handlers have access to the React event that triggered the function.
+For Eg;
+function Football() {
+  const shoot = (a, b) => {
+    alert(b.type);
+  }
+
+  return (
+    <button onClick={(event) => shoot("Goal!", event)}>Take the shot!</button>
+  );
+}
+will alert "click" when clicked on button.
+
+React Forms
+Just like in HTML, React uses forms to allow users to interact with the web page.
+Example:
+function MyForm() {
+  return (
+    <form>
+      <label>Enter your name:
+        <input type="text" />
+      </label>
+    </form>
+  )
+}
+This will work as normal, the form will submit and the page will refresh.
+But this is generally not what we want to happen in React.
+We want to prevent this default behavior and let React control the form.
+
+So how do we handle it?
+Handling forms is about how you handle the data when it changes value or gets submitted.
+In HTML, form data is usually handled by the DOM.
+In React, form data is usually handled by the components.
+When the data is handled by the components, all the data is stored in the component state.
+We can control changes by adding event handlers in the onChange attribute.
+We can use the useState Hook to keep track of each inputs value and provide a "single source of truth" for the entire application.
+Example:
+import { useState } from 'react';
+function MyForm() {
+  const [name, setName] = useState("");
+  return (
+    <form>
+      <label>Enter your name:
+        <input
+          type="text" 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+    </form>
+  )
+}
+
+Submit Forms
+We can control the submit action by adding an event handler in the onSubmit attribute for the <form>.
+Like for previous MyForm function we can add an event handler called handleSubmit and alert the input value
+import { useState } from 'react';
+function MyForm() {
+  const [name, setName] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The name you entered was: ${name}`)
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Enter your name:
+        <input 
+          type="text" 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+      <input type="submit" />
+    </form>
+  )
+}
+
+How to handle Multiple Input Fields
+We can control the values of more than one input field by adding a name attribute to each element.
+We will initialize our state with an empty object.
+To access the fields in the event handler use the event.target.name and event.target.value syntax.
+To update the state, use square brackets [bracket notation] around the property name.
+
+Textarea
+The textarea element in React is slightly different from ordinary HTML.
+In HTML the value of a textarea is the text between the start tag <textarea> and the end tag </textarea>.
+Example:
+<textarea>
+  Content of the textarea.
+</textarea>
+But in React the value of a textarea is placed in a value attribute. We use the useState Hook to manage the value of the textarea.
+Example:
+import { useState } from 'react';
+function MyForm() {
+  const [textarea, setTextarea] = useState("");
+  const handleChange = (event) => {
+    setTextarea(event.target.value)
+  }
+  return (
+    <form>
+      <textarea value={textarea} onChange={handleChange} />
+    </form>
+  )
+}
+Select
+A drop down list, or a select box, in React is also a bit different from HTML.
+In HTML, the selected value in the drop down list was defined with the selected attribute
+But in React, the selected value is defined with a value attribute on the select tag.
+
+
+Routing
+Create React App doesn't include page routing.
+React Router is the most popular solution.
+
+How to add React Router
+To add React Router in your application, run npm i react-router-dom in the terminal from the root directory of the application.
+
