@@ -1,0 +1,37 @@
+Interpreter translates one statement at a time into machine code
+Whereas Compiler translates scans the entire program and translates whole of it into machine code
+
+
+interpreter 
+--> one statement at a time
+--> it is needed everytime
+--> partial execution till error
+--> easy for programmers
+ex: python, javascript
+
+Compiler
+--> entire program at a time
+--> once compiled it is needed
+--> no execution if error occurs
+--> usually not as easy as interpreted 
+ex: C, C++
+
+compiled languages are faster
+
+
+is Java compiled or interpreted language?
+--> Java is a hybrid language, both compiled and interpreted as well.
+
+Java File --> javac compiler--> Class File --> byteCode(platform independent) --> can be used by java Interpreter
+
+--> A jvm is used to interpret this byteCode
+--> this byteCode can be taken to any platform for execution
+--> hence Java is platform independent
+
+Executing a Java Program --> javac One.java(compiled and generates a class file One.class) --> java One (Interpreted)
+
+Package in Java
+--> A package is used to group related classes. It help in avoiding name conflicts.
+--> There are two types of packages:
+i) Built-in Package --> Java API
+ii) User Defined Package --> Custom Package
