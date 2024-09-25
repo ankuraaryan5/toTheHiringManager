@@ -35,3 +35,16 @@ Package in Java
 --> There are two types of packages:
 i) Built-in Package --> Java API
 ii) User Defined Package --> Custom Package
+
+Access Modifiers in Java
+--> It determines whether other classes can use a particular feild or invoke a particular method.
+--> Can be Public, Private, Protected, or default(no modifier)
+
+Access Chart
+
+Modifier	Class	Package	Subclass	World
+public	    Y	    Y	    Y	        Y
+protected	Y	    Y	    Y	        N
+no modifier	Y	    Y	    N	        N
+private	    Y	    N	    N	        N
+
