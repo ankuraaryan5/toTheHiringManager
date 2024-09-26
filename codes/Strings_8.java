@@ -3,6 +3,18 @@ public class One {
         System.out.println("Hello, World!");
     }
 }
+
+// all me previous codes are here, ididn' want to push them one by one because i m lazy 
+// package com.example;
+
+
+
+
+// package com.example;
+
+
+
+
 // package com.example;
 
 public class Strings_8 {
