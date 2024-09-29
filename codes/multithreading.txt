@@ -1,0 +1,38 @@
+MultiTasking --> the ability of a system (typically an operating system) to perform multiple tasks or processes simultaneously.
+Multithreading and Multiprocessing both are used to acheive MultiTasking.
+
+Example:
+Opening Word, Chrome, and File Explorer = Multiprocessing (each is a separate process).
+Multiple Chrome tabs = Mostly multiprocessing, but with some multithreading inside each tab for handling various tasks concurrently.
+
+Multithreading in Each Tab:
+Multiple Threads within Each Process: Inside each tab (process), Chrome uses multiple threads to handle different tasks concurrently. These tasks can include:
+
+Rendering the webpage
+Handling JavaScript
+Handling network requests: Fetching resources like images, CSS files, or data from APIs.
+Running extensions
+
+Difference between threads and Processes
+Threads uses shared memory area.
+It can have faster context swithcing
+A thread is light-weight whereas a process us heavyweight
+
+Control Flow in Java
+i) without thread:
+    main()--> function1()-->function2 -->end
+    we will have to wait for execution of each function.
+
+ii) with threads
+        main() -->
+    function1()-->  END
+    function2()-->
+    we can concurrently run these functions
+
+Creating a Thread
+-->there are two ways to create a thread in Java
+i) by extending Thread class
+ii) by implementing Runnable interface
+
+Concurrency --> managing multiple computations by doing one thing at a time. ex-> coding and kitchen
+Parallelism --> managing multiple computations at the same time ex-> chatting and kitchen
