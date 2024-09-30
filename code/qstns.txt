@@ -1,0 +1,63 @@
+Here's a list of 50 basic programming questions for you to practice:
+
+### General Programming
+1. Write a program to print "Hello, World!".
+2. Write a program to find the largest of three numbers.
+3. Write a program to check if a number is even or odd.
+4. Write a program to swap two numbers without using a third variable.
+5. Write a program to check if a number is prime.
+6. Write a program to reverse a string.
+7. Write a program to find the factorial of a number.
+8. Write a program to find the Fibonacci sequence up to a given number.
+9. Write a program to check if a string is a palindrome.
+10. Write a program to calculate the sum of digits of a number.
+
+### Arrays & Strings
+11. Write a program to find the largest element in an array.
+12. Write a program to find the second largest element in an array.
+13. Write a program to sort an array using bubble sort.
+14. Write a program to merge two sorted arrays.
+15. Write a program to find the frequency of an element in an array.
+16. Write a program to rotate an array by a given number of positions.
+17. Write a program to find the length of a string without using a built-in function.
+18. Write a program to remove duplicates from an array.
+19. Write a program to find the longest common prefix in a list of strings.
+20. Write a program to find the first non-repeated character in a string.
+
+### Loops & Conditionals
+21. Write a program to print the multiplication table of a number.
+22. Write a program to print the first 10 prime numbers.
+23. Write a program to count the number of vowels in a string.
+24. Write a program to reverse the digits of a number.
+25. Write a program to calculate the sum of all elements in an array.
+26. Write a program to check if a year is a leap year.
+27. Write a program to find the greatest common divisor (GCD) of two numbers.
+28. Write a program to find the least common multiple (LCM) of two numbers.
+29. Write a program to print a pattern of stars in a pyramid shape.
+30. Write a program to find the sum of all even numbers up to a given number.
+
+### Recursion & Functions
+31. Write a program to calculate the nth Fibonacci number using recursion.
+32. Write a recursive function to find the sum of digits of a number.
+33. Write a program to calculate the power of a number using recursion.
+34. Write a program to reverse a string using recursion.
+35. Write a program to check if a string is a palindrome using recursion.
+36. Write a program to find the length of a string using recursion.
+37. Write a program to find the factorial of a number using recursion.
+38. Write a program to find the GCD of two numbers using recursion.
+39. Write a function to check if a number is a palindrome.
+40. Write a program to convert a binary number to decimal.
+
+### Searching & Sorting
+41. Write a program to implement linear search in an array.
+42. Write a program to implement binary search in an array.
+43. Write a program to implement selection sort.
+44. Write a program to implement insertion sort.
+45. Write a program to find the missing number in an array of consecutive integers.
+46. Write a program to find duplicates in an array.
+47. Write a program to sort an array of strings in alphabetical order.
+48. Write a program to count the number of occurrences of each element in an array.
+49. Write a program to implement quicksort.
+50. Write a program to implement merge sort.
+
+These questions cover a variety of basic concepts across different areas of programming. They will give you good practice with problem-solving and algorithm design.
