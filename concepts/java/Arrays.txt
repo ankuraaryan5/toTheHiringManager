@@ -1,0 +1,25 @@
+What is an Array?
+Array is a linear data structure where all elements are arranged sequentially. It is a collection of elements of same data type stored at contiguous memory locations. 
+
+Types of Arrays
+Arrays can be classified in two ways:
+On the basis of Size
+On the basis of Dimensions
+
+Types of Arrays on the basis of Size:
+1. Fixed Sized Arrays: We cannot alter or update the size of this array. Here only a fixed size (i,e. the size that is mentioned in square brackets []) of memory will be allocated for storage. In case, we don’t know the size of the array then if we declare a larger size and store a lesser number of elements will result in a wastage of memory or we declare a lesser size than the number of elements then we won’t get enough memory to store all the elements. In such cases, static memory allocation is not preferred
+
+Dynamic Sized Arrays:
+The size of the array changes as per user requirements during execution of code so the coders do not have to worry about sizes. They can add and removed the elements as per the need. The memory is mostly dynamically allocated and de-allocated in these arrays.
+** C-language doesn't support this as of now
+
+Types of Arrays on the basis of Dimensions:
+1. One-dimensional Array(1-D Array): elements are stored in a row
+2. Multi-dimensional Array: A multi-dimensional array is an array with more than one dimension. We can use multidimensional array to store complex data in the form of tables, etc. We can have 2-D arrays, 3-D arrays, 4-D arrays and so on.
+
+Operations on Array
+1. Traversel
+2. Insertion
+3. Searching
+4. Deletion
+
