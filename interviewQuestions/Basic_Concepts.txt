@@ -1,0 +1,107 @@
+# 1. Time and Space Complexity
+Analyze the time complexity of basic loops and nested loops.
+Calculate the time complexity for a given recursive function.
+Identify the complexity of searching algorithms: Linear Search, Binary Search.
+Calculate the time complexity of Bubble Sort, Quick Sort, and Merge Sort.
+Compare time complexity for different sorting algorithms.
+Find the space complexity of a recursive function.
+What is the time complexity of a program that includes logarithmic steps?
+Determine the Big-O for an algorithm with multiple nested loops.
+Prove the worst-case time complexity of Binary Search.
+What is amortized time complexity? Give an example.
+Identify the most efficient sorting algorithm for nearly sorted arrays.
+Analyze space complexity in prefix sum calculations.
+Derive recurrence relation for Merge Sort.
+Compare time complexity of iterative and recursive Fibonacci.
+Calculate time complexity for traversing a Binary Tree (DFS).
+Discuss average case vs worst case for Quick Sort.
+Find the Big-O of an algorithm involving two independent loops.
+How is Big Theta (Θ) notation different from Big O?
+Explain the time complexity of the Sieve of Eratosthenes.
+Determine time complexity for string concatenation in a loop.
+
+# 2. Recursion
+Print numbers from 1 to N using recursion.
+Find the factorial of a number recursively.
+Find the nth Fibonacci number using recursion.
+Check if a string is a palindrome using recursion.
+Reverse a string recursively.
+Solve the Tower of Hanoi problem for n disks.
+Print all subsets of a set using recursion.
+Count the number of digits in a number recursively.
+Find the greatest common divisor (GCD) using recursion.
+Solve a recursive problem to sum digits of a number.
+Implement binary search recursively.
+Check if an array is sorted using recursion.
+Solve the N-Queens problem using recursion.
+Generate all permutations of a string.
+Solve the Rat in a Maze problem.
+Find the power of a number (a^b) recursively.
+Count the number of ways to climb stairs (1 or 2 steps).
+Print all combinations of a string’s characters.
+Write a recursive function to calculate sum of an array.
+Solve the Josephus problem recursively.
+
+# 3. Sorting Algorithms
+Implement Bubble Sort.
+Implement Selection Sort.
+Implement Insertion Sort.
+Implement Merge Sort.
+Implement Quick Sort.
+Sort an array containing 0s, 1s, and 2s (Dutch National Flag problem).
+Find the kth largest element in an array.
+Find the smallest element in an unsorted array.
+Count inversions in an array.
+Check if an array is sorted or not.
+Sort an array of strings lexicographically.
+Implement a counting sort for a range of integers.
+Use Merge Sort to count inversions.
+Sort an array of 0s and 1s in linear time.
+Implement Heap Sort.
+Find the missing number in a range using sorting.
+Implement Bucket Sort.
+Find the median of an unsorted array.
+Sort a nearly sorted array using an efficient algorithm.
+Sort a linked list using Merge Sort.
+# 4. Searching Algorithms
+Implement Linear Search.
+Implement Binary Search.
+Find the first and last occurrence of a given element.
+Count the occurrences of a number in a sorted array.
+Find the peak element in an array.
+Search for a target in a rotated sorted array.
+Find the square root of a number using binary search.
+Find the minimum in a rotated sorted array.
+Find the floor and ceiling of a number in a sorted array.
+Search for an element in a 2D matrix.
+Find the closest pair to a given sum in two sorted arrays.
+Find a fixed point (A[i] = i) in a sorted array.
+Use binary search to find the smallest missing positive number.
+Implement exponential search.
+Find the number of occurrences of a number in an unsorted array.
+Use binary search to find the peak of a mountain array.
+Implement ternary search.
+Use binary search for finding the median of two sorted arrays.
+Search for a key in an infinite sorted array.
+Implement jump search.
+# 5. Arrays
+Find the largest and smallest elements in an array.
+Reverse an array.
+Move all zeros to the end of the array.
+Find the second largest element in the array.
+Rotate an array by k positions.
+Find the subarray with the maximum sum (Kadane’s Algorithm).
+Find the longest consecutive subsequence.
+Count pairs with a given sum.
+Find the majority element in an array.
+Implement the two-pointer technique.
+Check for duplicates in an array.
+Find the missing number in an array.
+Rearrange the array in alternating positive and negative numbers.
+Find the maximum product subarray.
+Find the first and last position of an element in a sorted array.
+Implement a prefix sum array.
+Find the equilibrium index of an array.
+Merge two sorted arrays.
+Count subarrays with a given sum.
+Find the minimum difference between any two elements.
